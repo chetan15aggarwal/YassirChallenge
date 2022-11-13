@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E280A3229219F9B00DC3668 /* LoadMovieListFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E280A3129219F9B00DC3668 /* LoadMovieListFromRemoteUseCaseTests.swift */; };
 		0EB9631129214C8A00B494A6 /* MovieListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB9631029214C8A00B494A6 /* MovieListItem.swift */; };
 		0EB96313292157F800B494A6 /* MovieListLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB96312292157F800B494A6 /* MovieListLoader.swift */; };
 		0EB96316292158DB00B494A6 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB96315292158DB00B494A6 /* URLSessionHTTPClient.swift */; };
@@ -20,7 +21,6 @@
 		0EEF15862921443F003F125F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EEF15842921443F003F125F /* Main.storyboard */; };
 		0EEF158829214442003F125F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EEF158729214442003F125F /* Assets.xcassets */; };
 		0EEF158B29214442003F125F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EEF158929214442003F125F /* LaunchScreen.storyboard */; };
-		0EEF159629214443003F125F /* YassirChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF159529214443003F125F /* YassirChallengeTests.swift */; };
 		0EEF15A029214444003F125F /* YassirChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF159F29214444003F125F /* YassirChallengeUITests.swift */; };
 		0EEF15A229214444003F125F /* YassirChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF15A129214444003F125F /* YassirChallengeUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E280A3129219F9B00DC3668 /* LoadMovieListFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMovieListFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		0EB9631029214C8A00B494A6 /* MovieListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItem.swift; sourceTree = "<group>"; };
 		0EB96312292157F800B494A6 /* MovieListLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListLoader.swift; sourceTree = "<group>"; };
 		0EB96315292158DB00B494A6 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		0EEF158A29214442003F125F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EEF158C29214443003F125F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EEF159129214443003F125F /* YassirChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YassirChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0EEF159529214443003F125F /* YassirChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YassirChallengeTests.swift; sourceTree = "<group>"; };
 		0EEF159B29214444003F125F /* YassirChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YassirChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EEF159F29214444003F125F /* YassirChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YassirChallengeUITests.swift; sourceTree = "<group>"; };
 		0EEF15A129214444003F125F /* YassirChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YassirChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -270,7 +270,7 @@
 		0EEF159429214443003F125F /* YassirChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				0EEF159529214443003F125F /* YassirChallengeTests.swift */,
+				0E280A3129219F9B00DC3668 /* LoadMovieListFromRemoteUseCaseTests.swift */,
 			);
 			path = YassirChallengeTests;
 			sourceTree = "<group>";
@@ -432,7 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EEF159629214443003F125F /* YassirChallengeTests.swift in Sources */,
+				0E280A3229219F9B00DC3668 /* LoadMovieListFromRemoteUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
