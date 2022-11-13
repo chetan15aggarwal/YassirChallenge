@@ -117,15 +117,6 @@ final class LoadMovieListFromRemoteUseCaseTests: XCTestCase {
         return (sut, client)
     }
     
-    private func trackMemoryLeak(_ instance: AnyObject,
-                                 file: StaticString = #filePath,
-                                 line: UInt = #line ) {
-        
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance, "Instance should have been deallocated. Potential memory leak", file: file, line: line)
-        }
-    }
-    
     private func expect(_ sut: RemoteMovieListLoader,
                         toCompleteWith expectedResult: RemoteMovieListLoader.Result,
                         file: StaticString = #filePath,
