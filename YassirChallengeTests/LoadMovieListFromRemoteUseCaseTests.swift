@@ -113,6 +113,15 @@ final class LoadMovieListFromRemoteUseCaseTests: XCTestCase {
         return try! JSONSerialization.data(withJSONObject: itemJson, options: .prettyPrinted)
     }
     
+    func test_load_deliversErrorOn200HTTPResponseWithInvalidJson() {
+        let (sut, client) = makeSUT()
+        
+        expect(sut, toCompleteWith: failure(.invalidData)) {
+            let invalidJson = Data("invalid json".utf8)
+            client.complete(withStatusCode: 200, data: invalidJson)
+        }
+    }
+    
     // MARK: - HTTPClientSpy
     private final class HTTPClientSpy: HTTPClient {
         private var messages = [(url: URL, completion: (HTTPClientResult) -> Void)]()
