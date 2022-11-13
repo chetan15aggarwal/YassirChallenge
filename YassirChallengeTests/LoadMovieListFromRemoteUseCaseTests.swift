@@ -22,6 +22,16 @@ final class LoadMovieListFromRemoteUseCaseTests: XCTestCase {
         XCTAssertEqual(client.requestedURLs, [url])
     }
     
+    func test_loadTwice_requestsDataFromURLTwice () {
+        let url = URL(string: "http://a-given-url.com")!
+        let (sut, client) = makeSUT(url: url)
+        
+        sut.load(completion: { _ in })
+        sut.load(completion: { _ in })
+        
+        XCTAssertEqual(client.requestedURLs, [url, url])
+    }
+    
     // MARK: - Helpers
     private func makeSUT(url: URL = URL(string: "http://a-given-url.com")!,
                          file: StaticString = #filePath,
