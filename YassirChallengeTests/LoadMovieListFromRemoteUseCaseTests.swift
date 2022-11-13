@@ -13,6 +13,15 @@ final class LoadMovieListFromRemoteUseCaseTests: XCTestCase {
         XCTAssertTrue(client.requestedURLs.isEmpty)
     }
     
+    func test_load_requestsDataFromURL() {
+        let url = URL(string: "http://a-given-url.com")!
+        let (sut, client) = makeSUT(url: url)
+        
+        sut.load(completion: { _ in })
+        
+        XCTAssertEqual(client.requestedURLs, [url])
+    }
+    
     // MARK: - Helpers
     private func makeSUT(url: URL = URL(string: "http://a-given-url.com")!,
                          file: StaticString = #filePath,
