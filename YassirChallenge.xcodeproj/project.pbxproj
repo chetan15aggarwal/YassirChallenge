@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0EB9631129214C8A00B494A6 /* MovieListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB9631029214C8A00B494A6 /* MovieListItem.swift */; };
 		0EB96313292157F800B494A6 /* MovieListLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB96312292157F800B494A6 /* MovieListLoader.swift */; };
+		0EB96316292158DB00B494A6 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB96315292158DB00B494A6 /* URLSessionHTTPClient.swift */; };
+		0EB96318292158E800B494A6 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB96317292158E800B494A6 /* HTTPClient.swift */; };
 		0EEF157F2921443F003F125F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF157E2921443F003F125F /* AppDelegate.swift */; };
 		0EEF15812921443F003F125F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF15802921443F003F125F /* SceneDelegate.swift */; };
 		0EEF15832921443F003F125F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF15822921443F003F125F /* ViewController.swift */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		0EB9631029214C8A00B494A6 /* MovieListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItem.swift; sourceTree = "<group>"; };
 		0EB96312292157F800B494A6 /* MovieListLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListLoader.swift; sourceTree = "<group>"; };
+		0EB96315292158DB00B494A6 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		0EB96317292158E800B494A6 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		0EEF157B2921443F003F125F /* YassirChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YassirChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EEF157E2921443F003F125F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EEF15802921443F003F125F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -209,6 +213,15 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		0EB96314292158C300B494A6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0EB96315292158DB00B494A6 /* URLSessionHTTPClient.swift */,
+				0EB96317292158E800B494A6 /* HTTPClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		0EEF15722921443F003F125F = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +245,7 @@
 		0EEF157D2921443F003F125F /* YassirChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				0EB96314292158C300B494A6 /* Network */,
 				0EB9630F2921490B00B494A6 /* App */,
 				0EB963002921483F00B494A6 /* PhotoList */,
 				0EB963012921484900B494A6 /* PhotoDetails */,
@@ -395,8 +409,10 @@
 				0EEF15832921443F003F125F /* ViewController.swift in Sources */,
 				0EB9631129214C8A00B494A6 /* MovieListItem.swift in Sources */,
 				0EB96313292157F800B494A6 /* MovieListLoader.swift in Sources */,
+				0EB96318292158E800B494A6 /* HTTPClient.swift in Sources */,
 				0EEF157F2921443F003F125F /* AppDelegate.swift in Sources */,
 				0EEF15812921443F003F125F /* SceneDelegate.swift in Sources */,
+				0EB96316292158DB00B494A6 /* URLSessionHTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
