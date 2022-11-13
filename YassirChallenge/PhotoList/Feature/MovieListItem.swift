@@ -12,7 +12,7 @@ struct MovieListItem: Hashable {
     let originalLanguage: String
     let posterPath: String?
     let adult: Bool
-    let averageVote: Int
-    let averageCount: Int
+    let voteAverage: Double
+    let voteCount: Int
     let overview: String
 }

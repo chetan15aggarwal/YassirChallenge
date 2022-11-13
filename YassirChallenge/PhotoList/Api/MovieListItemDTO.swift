@@ -11,13 +11,13 @@ struct MovieListItemDTO: Decodable {
     let originalLanguage: String
     let posterPath: String?
     let adult: Bool
-    let averageVote: Int
-    let averageCount: Int
+    let voteAverage: Double
+    let voteCount: Int
     let overview: String
     
     func toModels() -> MovieListItem {
         
-        return MovieListItem(id: id, title: title, originalLanguage: originalLanguage, posterPath: posterPath, adult: adult, averageVote: averageVote, averageCount: averageCount, overview: overview)
+        return MovieListItem(id: id, title: title, originalLanguage: originalLanguage, posterPath: posterPath, adult: adult, voteAverage: voteAverage, voteCount: voteCount, overview: overview)
     }
 }
 
@@ -25,7 +25,7 @@ extension Array where Element == MovieListItemDTO {
     func toModels() -> [MovieListItem] {
         return map {
             
-            MovieListItem(id: $0.id, title: $0.title, originalLanguage: $0.originalLanguage, posterPath: $0.posterPath, adult: $0.adult, averageVote: $0.averageVote, averageCount: $0.averageCount, overview: $0.overview)
+            MovieListItem(id: $0.id, title: $0.title, originalLanguage: $0.originalLanguage, posterPath: $0.posterPath, adult: $0.adult, voteAverage: $0.voteAverage, voteCount: $0.voteCount, overview: $0.overview)
         }
     }
 }

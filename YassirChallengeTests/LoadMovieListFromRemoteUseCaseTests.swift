@@ -54,6 +54,42 @@ final class LoadMovieListFromRemoteUseCaseTests: XCTestCase {
         }
     }
     
+    
+    func test_load_deliversErrorOn200HTTPResponseWithInvalidJson() {
+        let (sut, client) = makeSUT()
+
+        expect(sut, toCompleteWith: failure(.invalidData)) {
+            let invalidJson = Data("invalid json".utf8)
+            client.complete(withStatusCode: 200, data: invalidJson)
+        }
+    }
+    
+    func test_load_deliverNoItemOn200HTTPResponseWithEmptyList() {
+
+        let (sut, client) = makeSUT()
+
+        expect(sut, toCompleteWith: .success([])) {
+            let invalidJson = makeItemJson([])
+            client.complete(withStatusCode: 200, data: invalidJson)
+        }
+    }
+    
+    func test_load_diliverItemsOn200HTTPResponseWithJsonItems() {
+        let (sut, client) = makeSUT()
+        
+        let item1 = makeItem(id: 663712, title: "Terrifier 2", originalLanguage: "en", posterPath: "/b6IRp6Pl2Fsq37r9jFhGoLtaqHm.jpg", adult: false, voteAverage: 7, voteCount: 563, overview: "overview description")
+        
+        let item2 = makeItem(id: 505642, title: "Black Panther: Wakanda Forever", originalLanguage: "en", posterPath: "/sv1xJUazXeYqALzczSZ3O6nkH75.jpg", adult: false, voteAverage: 7.6, voteCount: 347, overview: "overview description")
+        
+        let items = ([item1.model, item2.model])
+
+        
+        expect(sut, toCompleteWith: .success(items)) {
+            let jsonData = makeItemJson([item1.json, item2.json])
+            client.complete(withStatusCode: 200, data: jsonData)
+        }
+    }
+    
     // MARK: - Helpers
     private func makeSUT(url: URL = URL(string: "http://a-given-url.com")!,
                          file: StaticString = #filePath,
@@ -113,23 +149,23 @@ final class LoadMovieListFromRemoteUseCaseTests: XCTestCase {
         return try! JSONSerialization.data(withJSONObject: itemJson, options: .prettyPrinted)
     }
     
-    func test_load_deliversErrorOn200HTTPResponseWithInvalidJson() {
-        let (sut, client) = makeSUT()
+    private func makeItem(id: UInt, title: String, originalLanguage: String, posterPath: String?, adult: Bool, voteAverage: Double, voteCount: Int, overview: String) -> (model: MovieListItem, json: [String: Any]) {
+        
+        let item = MovieListItem(id: id, title: title, originalLanguage: originalLanguage, posterPath: posterPath, adult: adult, voteAverage: voteAverage, voteCount: voteCount, overview: overview)
+        
 
-        expect(sut, toCompleteWith: failure(.invalidData)) {
-            let invalidJson = Data("invalid json".utf8)
-            client.complete(withStatusCode: 200, data: invalidJson)
-        }
-    }
-    
-    func test_load_deliverNoItemOn200HTTPResponseWithEmptyList() {
-
-        let (sut, client) = makeSUT()
-
-        expect(sut, toCompleteWith: .success([])) {
-            let invalidJson = makeItemJson([])
-            client.complete(withStatusCode: 200, data: invalidJson)
-        }
+        let json: [String: Any] = [
+            "id": id,
+            "title": title,
+            "original_language": originalLanguage,
+            "poster_path": posterPath ?? "",
+            "vote_average": voteAverage,
+            "vote_count": voteCount,
+            "overview": overview,
+            "adult": adult
+        ]
+        
+        return (item, json)
     }
     
     // MARK: - HTTPClientSpy
