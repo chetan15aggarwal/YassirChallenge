@@ -76,6 +76,132 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EB963002921483F00B494A6 /* PhotoList */ = {
+			isa = PBXGroup;
+			children = (
+				0EB963072921489800B494A6 /* Presentation */,
+				0EB963052921487500B494A6 /* Api */,
+				0EB963042921487000B494A6 /* Feature */,
+			);
+			path = PhotoList;
+			sourceTree = "<group>";
+		};
+		0EB963012921484900B494A6 /* PhotoDetails */ = {
+			isa = PBXGroup;
+			children = (
+				0EB963062921489100B494A6 /* Presentation */,
+				0EB963032921486600B494A6 /* Api */,
+				0EB963022921486100B494A6 /* Feature */,
+			);
+			path = PhotoDetails;
+			sourceTree = "<group>";
+		};
+		0EB963022921486100B494A6 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		0EB963032921486600B494A6 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		0EB963042921487000B494A6 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		0EB963052921487500B494A6 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		0EB963062921489100B494A6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0EB9630B292148CB00B494A6 /* View */,
+				0EB9630A292148C500B494A6 /* ViewModel */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		0EB963072921489800B494A6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0EB96309292148B800B494A6 /* View */,
+				0EB96308292148B000B494A6 /* ViewModel */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		0EB96308292148B000B494A6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0EB96309292148B800B494A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0EB9630A292148C500B494A6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0EB9630B292148CB00B494A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0EB9630C292148E200B494A6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0EB9630D292148EA00B494A6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0EB9630E292148F200B494A6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0EEF158729214442003F125F /* Assets.xcassets */,
+				0EEF158929214442003F125F /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0EB9630F2921490B00B494A6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0EEF157E2921443F003F125F /* AppDelegate.swift */,
+				0EEF15802921443F003F125F /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		0EEF15722921443F003F125F = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +225,14 @@
 		0EEF157D2921443F003F125F /* YassirChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				0EEF157E2921443F003F125F /* AppDelegate.swift */,
-				0EEF15802921443F003F125F /* SceneDelegate.swift */,
+				0EB9630F2921490B00B494A6 /* App */,
+				0EB963002921483F00B494A6 /* PhotoList */,
+				0EB963012921484900B494A6 /* PhotoDetails */,
+				0EB9630E292148F200B494A6 /* Resources */,
+				0EB9630D292148EA00B494A6 /* Helpers */,
+				0EB9630C292148E200B494A6 /* Extensions */,
 				0EEF15822921443F003F125F /* ViewController.swift */,
 				0EEF15842921443F003F125F /* Main.storyboard */,
-				0EEF158729214442003F125F /* Assets.xcassets */,
-				0EEF158929214442003F125F /* LaunchScreen.storyboard */,
 				0EEF158C29214443003F125F /* Info.plist */,
 			);
 			path = YassirChallenge;
