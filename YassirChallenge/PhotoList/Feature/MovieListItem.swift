@@ -9,9 +9,10 @@ import Foundation
 struct MovieListItem: Hashable {
     let id: UInt
     let title: String
-    let language: String
-    let posterUrl: String?
+    let originalLanguage: String
+    let posterPath: String?
     let adult: Bool
     let averageVote: Int
     let averageCount: Int
+    let overview: String
 }
