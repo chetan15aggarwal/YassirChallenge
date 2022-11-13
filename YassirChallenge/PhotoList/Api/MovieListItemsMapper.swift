@@ -11,8 +11,8 @@ internal final class MovieListItemsMapper {
     private struct Root: Decodable {
         let page: UInt
         let results: [MovieListItemDTO]
-        let totalPages: String
-        let totalResults: String
+        let totalPages: UInt
+        let totalResults: UInt
     }
     
     internal static func map(_ data: Data, _ response: HTTPURLResponse) throws  -> [MovieListItemDTO] {
