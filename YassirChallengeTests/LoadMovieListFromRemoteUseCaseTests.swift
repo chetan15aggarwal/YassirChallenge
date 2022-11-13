@@ -90,6 +90,19 @@ final class LoadMovieListFromRemoteUseCaseTests: XCTestCase {
         }
     }
     
+    func test_load_doesNotDeliverResultAfterSUTHasBeenDeallocated() {
+        let url = URL(string: "http://a-url.com")!
+        let client = HTTPClientSpy()
+        var sut: RemoteMovieListLoader? = RemoteMovieListLoader(url: url, client: client)
+        
+        var capturedResults = [RemoteMovieListLoader.Result]()
+        sut?.load { capturedResults.append($0) }
+        sut = nil
+        
+        client.complete(withStatusCode: 200, data: makeItemJson([]))
+        XCTAssertTrue(capturedResults.isEmpty)
+    }
+    
     // MARK: - Helpers
     private func makeSUT(url: URL = URL(string: "http://a-given-url.com")!,
                          file: StaticString = #filePath,
