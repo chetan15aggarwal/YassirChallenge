@@ -41,6 +41,19 @@ final class LoadMovieListFromRemoteUseCaseTests: XCTestCase {
         }
     }
     
+    func test_load_deliversErrorOnNon200HTTPResponse() {
+        let (sut, client) = makeSUT()
+        
+        let samples = [199, 201, 300, 400, 500]
+        samples.enumerated().forEach { index, code in
+            
+            expect(sut, toCompleteWith: failure(.invalidData)) {
+                let json = makeItemJson([])
+                client.complete(withStatusCode: code, data: json, index: index)
+            }
+        }
+    }
+    
     // MARK: - Helpers
     private func makeSUT(url: URL = URL(string: "http://a-given-url.com")!,
                          file: StaticString = #filePath,
@@ -92,6 +105,13 @@ final class LoadMovieListFromRemoteUseCaseTests: XCTestCase {
         return .failure(error)
     }
     
+    private func makeItemJson(_ items: [[String: Any]]) -> Data {
+        let itemJson = ["results": items,
+                        "page": 1,
+                        "total_pages":40,
+                        "total_results":20] as [String : Any]
+        return try! JSONSerialization.data(withJSONObject: itemJson, options: .prettyPrinted)
+    }
     
     // MARK: - HTTPClientSpy
     private final class HTTPClientSpy: HTTPClient {
