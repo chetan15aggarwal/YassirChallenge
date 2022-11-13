@@ -115,9 +115,19 @@ final class LoadMovieListFromRemoteUseCaseTests: XCTestCase {
     
     func test_load_deliversErrorOn200HTTPResponseWithInvalidJson() {
         let (sut, client) = makeSUT()
-        
+
         expect(sut, toCompleteWith: failure(.invalidData)) {
             let invalidJson = Data("invalid json".utf8)
+            client.complete(withStatusCode: 200, data: invalidJson)
+        }
+    }
+    
+    func test_load_deliverNoItemOn200HTTPResponseWithEmptyList() {
+
+        let (sut, client) = makeSUT()
+
+        expect(sut, toCompleteWith: .success([])) {
+            let invalidJson = makeItemJson([])
             client.complete(withStatusCode: 200, data: invalidJson)
         }
     }
