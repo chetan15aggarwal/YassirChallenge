@@ -189,6 +189,7 @@
 			children = (
 				0EEF158729214442003F125F /* Assets.xcassets */,
 				0EEF158929214442003F125F /* LaunchScreen.storyboard */,
+				0EEF158C29214443003F125F /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -233,7 +234,6 @@
 				0EB9630C292148E200B494A6 /* Extensions */,
 				0EEF15822921443F003F125F /* ViewController.swift */,
 				0EEF15842921443F003F125F /* Main.storyboard */,
-				0EEF158C29214443003F125F /* Info.plist */,
 			);
 			path = YassirChallenge;
 			sourceTree = "<group>";
@@ -566,7 +566,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = YassirChallenge/Info.plist;
+				INFOPLIST_FILE = YassirChallenge/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -593,7 +593,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = YassirChallenge/Info.plist;
+				INFOPLIST_FILE = YassirChallenge/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
