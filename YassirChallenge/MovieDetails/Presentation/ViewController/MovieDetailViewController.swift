@@ -73,9 +73,6 @@ class MovieDetailViewController: UIViewController {
     }
     
     private func showErrorMessgae(message: String) {
-        let alertController = UIAlertController.init(title: "Error", message: message, preferredStyle: .alert)
-        let cancelAction = UIAlertAction.init(title: "OK", style: .cancel, handler: nil)
-        alertController.addAction(cancelAction)
-        self.present(alertController, animated: true, completion: nil)
+        showAlert(withTitle: "Error", andMessage: message)
     }
 }

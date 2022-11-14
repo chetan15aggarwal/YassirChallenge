@@ -37,6 +37,7 @@
 		0EC4B88B2922315D009078B9 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC4B88A2922315D009078B9 /* MovieListViewController.swift */; };
 		0EC4B88D2922331A009078B9 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC4B88C29223319009078B9 /* MovieListViewModel.swift */; };
 		0EC4B88F29223386009078B9 /* BindingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC4B88E29223386009078B9 /* BindingContainer.swift */; };
+		0EE02E6B2922E33600513F0F /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE02E6A2922E33600513F0F /* UIViewController+Extension.swift */; };
 		0EEF157F2921443F003F125F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF157E2921443F003F125F /* AppDelegate.swift */; };
 		0EEF15812921443F003F125F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF15802921443F003F125F /* SceneDelegate.swift */; };
 		0EEF158829214442003F125F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EEF158729214442003F125F /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 		0EC4B88A2922315D009078B9 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 		0EC4B88C29223319009078B9 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		0EC4B88E29223386009078B9 /* BindingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingContainer.swift; sourceTree = "<group>"; };
+		0EE02E6A2922E33600513F0F /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		0EEF157B2921443F003F125F /* YassirChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YassirChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EEF157E2921443F003F125F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EEF15802921443F003F125F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 		0EB9630C292148E200B494A6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0EE02E6A2922E33600513F0F /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				0EEF15812921443F003F125F /* SceneDelegate.swift in Sources */,
 				0EB96316292158DB00B494A6 /* URLSessionHTTPClient.swift in Sources */,
 				0E4C08A729228E580099FE0C /* MovieDetailDTO.swift in Sources */,
+				0EE02E6B2922E33600513F0F /* UIViewController+Extension.swift in Sources */,
 				0E4C08A529228E260099FE0C /* MovieDetailMapper.swift in Sources */,
 				0EC4B88D2922331A009078B9 /* MovieListViewModel.swift in Sources */,
 			);
