@@ -6,9 +6,10 @@
 import Foundation
 
 // MARK: - MovieListItem
-struct MovieDetailItem: Hashable {
+struct MovieDetail: Hashable {
     let id: UInt
     let title: String
     let posterPath: String?
     let overview: String
+    let averageVote: Double
 }
