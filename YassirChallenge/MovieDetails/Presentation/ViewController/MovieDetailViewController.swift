@@ -29,6 +29,9 @@ class MovieDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Movie Details"
+
         setupBindings()
         viewModel.fetchMovieDetails()
     }

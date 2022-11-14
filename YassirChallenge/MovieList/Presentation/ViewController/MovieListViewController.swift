@@ -9,6 +9,7 @@ class MovieListViewController: UIViewController {
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .white
+        tableView.separatorStyle = .none
         return tableView
     }()
     
@@ -33,7 +34,6 @@ class MovieListViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         setUpUI()
         viewModel.fetchMovieList()
     }
@@ -50,7 +50,10 @@ class MovieListViewController: UIViewController {
     }
     
     private func setUpUI() {
-        title = "Movie Library"
+        navigationItem.title = "Movie Library"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        view.backgroundColor = .white
+
         setupTableView()
         setTableConstraints()
         setupBindings()
