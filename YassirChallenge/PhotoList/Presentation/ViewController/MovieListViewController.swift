@@ -45,8 +45,9 @@ class MovieListViewController: UIViewController {
         tableView.delegate = self
         
         //setup cell
-        
         setTableConstraints()
+        
+        setupBindings()
     }
     
     private func setTableConstraints() {
@@ -57,14 +58,61 @@ class MovieListViewController: UIViewController {
         tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
     }
+    
+    private func setupBindings() {
+        bindTableViewReload()
+        bindErrorHandling()
+    }
+    
+    private func bindTableViewReload() {
+        viewModel.shouldReloadTableView.bind {[weak self] (needsUpdate) in
+            guard needsUpdate == true else {return}
+            DispatchQueue.main.async {
+                self?.tableView.isHidden = false
+                self?.tableView.reloadData()
+            }
+        }
+    }
+    
+    private func bindErrorHandling() {
+        viewModel.errorMessage.bind {[weak self] (errorMessage) in
+            guard let msg = errorMessage else {
+                return
+            }
+            DispatchQueue.main.async {
+                self?.showErrorMessgae(message: msg ?? "")
+            }
+        }
+    }
+    
+    private func showErrorMessgae(message : String) {
+        let alertController = UIAlertController.init(title: "Error", message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction.init(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+
 }
 
-extension MovieListViewController: UITableViewDataSource, UITableViewDelegate {
+extension MovieListViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return viewModel.numberOfRows(in: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cellData = viewModel.data(for: indexPath)
+        let cell = UITableViewCell()
+        cell.textLabel?.text = cellData.title
+        return cell
     }
+}
+
+
+extension MovieListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = viewModel.didSelect(indexPath: indexPath)
+        //open detail view controller
+    }
+
 }
