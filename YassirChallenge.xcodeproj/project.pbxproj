@@ -18,10 +18,10 @@
 		0EB9631A29215B3500B494A6 /* RemoteMovieListLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB9631929215B3500B494A6 /* RemoteMovieListLoader.swift */; };
 		0EB9631C29215B5C00B494A6 /* MovieListItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB9631B29215B5C00B494A6 /* MovieListItemsMapper.swift */; };
 		0EB9631E29215B7600B494A6 /* MovieListItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB9631D29215B7600B494A6 /* MovieListItemDTO.swift */; };
+		0EC4B88B2922315D009078B9 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC4B88A2922315D009078B9 /* MovieListViewController.swift */; };
 		0EEF157F2921443F003F125F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF157E2921443F003F125F /* AppDelegate.swift */; };
 		0EEF15812921443F003F125F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF15802921443F003F125F /* SceneDelegate.swift */; };
 		0EEF15832921443F003F125F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF15822921443F003F125F /* ViewController.swift */; };
-		0EEF15862921443F003F125F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EEF15842921443F003F125F /* Main.storyboard */; };
 		0EEF158829214442003F125F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EEF158729214442003F125F /* Assets.xcassets */; };
 		0EEF158B29214442003F125F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EEF158929214442003F125F /* LaunchScreen.storyboard */; };
 		0EEF15A029214444003F125F /* YassirChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF159F29214444003F125F /* YassirChallengeUITests.swift */; };
@@ -57,11 +57,11 @@
 		0EB9631929215B3500B494A6 /* RemoteMovieListLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteMovieListLoader.swift; sourceTree = "<group>"; };
 		0EB9631B29215B5C00B494A6 /* MovieListItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItemsMapper.swift; sourceTree = "<group>"; };
 		0EB9631D29215B7600B494A6 /* MovieListItemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItemDTO.swift; sourceTree = "<group>"; };
+		0EC4B88A2922315D009078B9 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 		0EEF157B2921443F003F125F /* YassirChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YassirChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EEF157E2921443F003F125F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EEF15802921443F003F125F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0EEF15822921443F003F125F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0EEF15852921443F003F125F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0EEF158729214442003F125F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EEF158A29214442003F125F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EEF158C29214443003F125F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 		0EB963072921489800B494A6 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				0EB96309292148B800B494A6 /* View */,
+				0EB96309292148B800B494A6 /* ViewController */,
 				0EB96308292148B000B494A6 /* ViewModel */,
 			);
 			path = Presentation;
@@ -191,11 +191,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		0EB96309292148B800B494A6 /* View */ = {
+		0EB96309292148B800B494A6 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0EC4B88A2922315D009078B9 /* MovieListViewController.swift */,
 			);
-			path = View;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		0EB9630A292148C500B494A6 /* ViewModel */ = {
@@ -285,7 +286,6 @@
 				0EB9630D292148EA00B494A6 /* Helpers */,
 				0EB9630C292148E200B494A6 /* Extensions */,
 				0EEF15822921443F003F125F /* ViewController.swift */,
-				0EEF15842921443F003F125F /* Main.storyboard */,
 			);
 			path = YassirChallenge;
 			sourceTree = "<group>";
@@ -415,7 +415,6 @@
 			files = (
 				0EEF158B29214442003F125F /* LaunchScreen.storyboard in Resources */,
 				0EEF158829214442003F125F /* Assets.xcassets in Resources */,
-				0EEF15862921443F003F125F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +446,7 @@
 				0EEF157F2921443F003F125F /* AppDelegate.swift in Sources */,
 				0EB9631A29215B3500B494A6 /* RemoteMovieListLoader.swift in Sources */,
 				0EB9631C29215B5C00B494A6 /* MovieListItemsMapper.swift in Sources */,
+				0EC4B88B2922315D009078B9 /* MovieListViewController.swift in Sources */,
 				0EB9631E29215B7600B494A6 /* MovieListItemDTO.swift in Sources */,
 				0EEF15812921443F003F125F /* SceneDelegate.swift in Sources */,
 				0EB96316292158DB00B494A6 /* URLSessionHTTPClient.swift in Sources */,
@@ -489,14 +489,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0EEF15842921443F003F125F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0EEF15852921443F003F125F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0EEF158929214442003F125F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -633,7 +625,6 @@
 				INFOPLIST_FILE = YassirChallenge/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -660,7 +651,6 @@
 				INFOPLIST_FILE = YassirChallenge/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
