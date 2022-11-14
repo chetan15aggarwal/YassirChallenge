@@ -6,7 +6,7 @@
 import Foundation
 
 enum LoadMovieDetailResult {
-    case success([MovieDetailItem])
+    case success(MovieDetail)
     case failure(Error)
 }
 
