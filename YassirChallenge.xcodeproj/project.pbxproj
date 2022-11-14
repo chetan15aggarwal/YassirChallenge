@@ -181,24 +181,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		0EB963002921483F00B494A6 /* PhotoList */ = {
+		0EB963002921483F00B494A6 /* MovieList */ = {
 			isa = PBXGroup;
 			children = (
 				0EB963072921489800B494A6 /* Presentation */,
 				0EB963052921487500B494A6 /* Api */,
 				0EB963042921487000B494A6 /* Feature */,
 			);
-			path = PhotoList;
+			path = MovieList;
 			sourceTree = "<group>";
 		};
-		0EB963012921484900B494A6 /* PhotoDetails */ = {
+		0EB963012921484900B494A6 /* MovieDetails */ = {
 			isa = PBXGroup;
 			children = (
 				0EB963062921489100B494A6 /* Presentation */,
 				0EB963032921486600B494A6 /* Api */,
 				0EB963022921486100B494A6 /* Feature */,
 			);
-			path = PhotoDetails;
+			path = MovieDetails;
 			sourceTree = "<group>";
 		};
 		0EB963022921486100B494A6 /* Feature */ = {
@@ -360,8 +360,8 @@
 			children = (
 				0EB96314292158C300B494A6 /* Network */,
 				0EB9630F2921490B00B494A6 /* App */,
-				0EB963002921483F00B494A6 /* PhotoList */,
-				0EB963012921484900B494A6 /* PhotoDetails */,
+				0EB963002921483F00B494A6 /* MovieList */,
+				0EB963012921484900B494A6 /* MovieDetails */,
 				0EB9630E292148F200B494A6 /* Resources */,
 				0EB9630D292148EA00B494A6 /* Helpers */,
 				0EB9630C292148E200B494A6 /* Extensions */,
