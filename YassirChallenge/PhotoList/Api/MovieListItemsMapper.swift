@@ -8,12 +8,6 @@ import Foundation
 internal final class MovieListItemsMapper {
     
     private static let OK_200 = 200
-    private struct Root: Decodable {
-        let page: UInt
-        let results: [MovieListItemDTO]
-        let totalPages: UInt
-        let totalResults: UInt
-    }
     
     internal static func map(_ data: Data, _ response: HTTPURLResponse) throws  -> [MovieListItemDTO] {
         
