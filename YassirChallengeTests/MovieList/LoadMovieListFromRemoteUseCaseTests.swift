@@ -78,9 +78,9 @@ final class LoadMovieListFromRemoteUseCaseTests: XCTestCase {
     func test_load_diliverItemsOn200HTTPResponseWithJsonItems() {
         let (sut, client) = makeSUT()
         
-        let item1 = makeItem(id: 663712, title: "Terrifier 2", originalLanguage: "en", posterPath: "/b6IRp6Pl2Fsq37r9jFhGoLtaqHm.jpg", adult: false, voteAverage: 7, voteCount: 563, overview: "overview description")
+        let item1 = makeItem(id: 663712, title: "Terrifier 2", posterPath: "/b6IRp6Pl2Fsq37r9jFhGoLtaqHm.jpg", adult: false, voteAverage: 7, voteCount: 563, overview: "overview description")
         
-        let item2 = makeItem(id: 505642, title: "Black Panther: Wakanda Forever", originalLanguage: "en", posterPath: "/sv1xJUazXeYqALzczSZ3O6nkH75.jpg", adult: false, voteAverage: 7.6, voteCount: 347, overview: "overview description")
+        let item2 = makeItem(id: 505642, title: "Black Panther: Wakanda Forever", posterPath: "/sv1xJUazXeYqALzczSZ3O6nkH75.jpg", adult: false, voteAverage: 7.6, voteCount: 347, overview: "overview description")
         
         let items = ([item1.model, item2.model])
 
@@ -154,15 +154,14 @@ final class LoadMovieListFromRemoteUseCaseTests: XCTestCase {
         return try! JSONSerialization.data(withJSONObject: itemJson, options: .prettyPrinted)
     }
     
-    private func makeItem(id: UInt, title: String, originalLanguage: String, posterPath: String?, adult: Bool, voteAverage: Double, voteCount: Int, overview: String) -> (model: MovieListItem, json: [String: Any]) {
+    private func makeItem(id: UInt, title: String, posterPath: String?, adult: Bool, voteAverage: Double, voteCount: Int, overview: String) -> (model: MovieListItem, json: [String: Any]) {
         
-        let item = MovieListItem(id: id, title: title, originalLanguage: originalLanguage, posterPath: posterPath, adult: adult, voteAverage: voteAverage, voteCount: voteCount, overview: overview)
+        let item = MovieListItem(id: id, title: title, posterPath: posterPath, adult: adult, voteAverage: voteAverage, voteCount: voteCount, overview: overview)
         
 
         let json: [String: Any] = [
             "id": id,
             "title": title,
-            "original_language": originalLanguage,
             "poster_path": posterPath ?? "",
             "vote_average": voteAverage,
             "vote_count": voteCount,
