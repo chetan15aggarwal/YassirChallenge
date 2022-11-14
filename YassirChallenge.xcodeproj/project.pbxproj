@@ -39,7 +39,6 @@
 		0EC4B88F29223386009078B9 /* BindingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC4B88E29223386009078B9 /* BindingContainer.swift */; };
 		0EEF157F2921443F003F125F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF157E2921443F003F125F /* AppDelegate.swift */; };
 		0EEF15812921443F003F125F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF15802921443F003F125F /* SceneDelegate.swift */; };
-		0EEF15832921443F003F125F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF15822921443F003F125F /* ViewController.swift */; };
 		0EEF158829214442003F125F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EEF158729214442003F125F /* Assets.xcassets */; };
 		0EEF158B29214442003F125F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EEF158929214442003F125F /* LaunchScreen.storyboard */; };
 		0EEF15A029214444003F125F /* YassirChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF159F29214444003F125F /* YassirChallengeUITests.swift */; };
@@ -95,7 +94,6 @@
 		0EEF157B2921443F003F125F /* YassirChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YassirChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EEF157E2921443F003F125F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EEF15802921443F003F125F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0EEF15822921443F003F125F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0EEF158729214442003F125F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EEF158A29214442003F125F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EEF158C29214443003F125F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -367,7 +365,6 @@
 				0EB9630E292148F200B494A6 /* Resources */,
 				0EB9630D292148EA00B494A6 /* Helpers */,
 				0EB9630C292148E200B494A6 /* Extensions */,
-				0EEF15822921443F003F125F /* ViewController.swift */,
 			);
 			path = YassirChallenge;
 			sourceTree = "<group>";
@@ -562,7 +559,6 @@
 				0E4C08A329228D970099FE0C /* RemoteMovieDetailLoader.swift in Sources */,
 				0EC4B88F29223386009078B9 /* BindingContainer.swift in Sources */,
 				0E4C0898292285530099FE0C /* MovieDetailViewController.swift in Sources */,
-				0EEF15832921443F003F125F /* ViewController.swift in Sources */,
 				0EB9631129214C8A00B494A6 /* MovieListItem.swift in Sources */,
 				0E4C089D29228C0F0099FE0C /* MovieDetailViewModel.swift in Sources */,
 				0EB96313292157F800B494A6 /* MovieListLoader.swift in Sources */,
