@@ -11,7 +11,6 @@
 		0E280A342921B65800DC3668 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E280A332921B65800DC3668 /* URLSessionHTTPClientTests.swift */; };
 		0E280A392921B6FE00DC3668 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E280A382921B6FE00DC3668 /* XCTestCase+MemoryLeakTracking.swift */; };
 		0E280A3C2921B91D00DC3668 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E280A3B2921B91D00DC3668 /* URLProtocolStub.swift */; };
-		0E2D32722922AFF400280C94 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0E2D32712922AFF400280C94 /* SDWebImage */; };
 		0E2D32742922B16600280C94 /* MovieListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2D32732922B16600280C94 /* MovieListViewModelTests.swift */; };
 		0E2D327A2922B43600280C94 /* MovieListMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E2D32792922B43600280C94 /* MovieListMock.json */; };
 		0E2D327C2922B4E500280C94 /* StubGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2D327B2922B4E500280C94 /* StubGenerator.swift */; };
@@ -38,6 +37,7 @@
 		0EC4B88D2922331A009078B9 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC4B88C29223319009078B9 /* MovieListViewModel.swift */; };
 		0EC4B88F29223386009078B9 /* BindingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC4B88E29223386009078B9 /* BindingContainer.swift */; };
 		0EE02E6B2922E33600513F0F /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE02E6A2922E33600513F0F /* UIViewController+Extension.swift */; };
+		0EE02E6E2922F6DA00513F0F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0EE02E6D2922F6DA00513F0F /* SDWebImage */; };
 		0EEF157F2921443F003F125F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF157E2921443F003F125F /* AppDelegate.swift */; };
 		0EEF15812921443F003F125F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF15802921443F003F125F /* SceneDelegate.swift */; };
 		0EEF158829214442003F125F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EEF158729214442003F125F /* Assets.xcassets */; };
@@ -119,7 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E2D32722922AFF400280C94 /* SDWebImage in Frameworks */,
+				0EE02E6E2922F6DA00513F0F /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,7 +434,7 @@
 			);
 			name = YassirChallengeTests;
 			packageProductDependencies = (
-				0E2D32712922AFF400280C94 /* SDWebImage */,
+				0EE02E6D2922F6DA00513F0F /* SDWebImage */,
 			);
 			productName = YassirChallengeTests;
 			productReference = 0EEF159129214443003F125F /* YassirChallengeTests.xctest */;
@@ -943,12 +943,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0E2D32712922AFF400280C94 /* SDWebImage */ = {
+		0E6AA2DC292266D100FDC6CB /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0E6AA2DB292266D100FDC6CB /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
-		0E6AA2DC292266D100FDC6CB /* SDWebImage */ = {
+		0EE02E6D2922F6DA00513F0F /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0E6AA2DB292266D100FDC6CB /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
