@@ -34,7 +34,7 @@ class MovieListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
-        setupTableView()
+        setUpUI()
         viewModel.fetchMovieList()
     }
     
@@ -44,9 +44,15 @@ class MovieListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        //setup cell
+        self.tableView.register(UINib(nibName: "MovieTableViewCell", bundle: nil), forCellReuseIdentifier: "MovieTableViewCell")
+
+        tableView.estimatedRowHeight = 100.0
+        tableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    private func setUpUI(){
+        setupTableView()
         setTableConstraints()
-        
         setupBindings()
     }
     
@@ -102,8 +108,9 @@ extension MovieListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellData = viewModel.data(for: indexPath)
-        let cell = UITableViewCell()
-        cell.textLabel?.text = cellData.title
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as! MovieTableViewCell
+        cell.setUp(cellData)
         return cell
     }
 }
@@ -112,6 +119,8 @@ extension MovieListViewController: UITableViewDataSource {
 extension MovieListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = viewModel.didSelect(indexPath: indexPath)
+        
+        debugPrint("Movie selected \(data.title)")
         //open detail view controller
     }
 

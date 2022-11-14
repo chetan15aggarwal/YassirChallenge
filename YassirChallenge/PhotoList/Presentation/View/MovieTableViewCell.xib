@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieTableViewCell" rowHeight="148" id="KGk-i7-Jjw" customClass="MovieTableViewCell" customModule="YassirChallenge" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="v2J-eN-80W">
+                        <rect key="frame" x="10" y="5" width="300" height="138"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hay-eZ-8L9">
+                                <rect key="frame" x="0.0" y="0.0" width="92" height="138"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Hay-eZ-8L9" secondAttribute="height" multiplier="2:3" id="ZZP-ZM-yCN"/>
+                                    <constraint firstAttribute="width" constant="92" id="fni-Ur-YlX"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="PI7-LP-2ip">
+                                <rect key="frame" x="107" y="0.0" width="193" height="58"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7Q-8x-TbB">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="21.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNq-jG-1hm">
+                                        <rect key="frame" x="0.0" y="38.666666666666664" width="105" height="19.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="v2J-eN-80W" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="BbA-SI-AoM"/>
+                    <constraint firstAttribute="trailing" secondItem="v2J-eN-80W" secondAttribute="trailing" constant="10" id="O2L-RF-kYr"/>
+                    <constraint firstAttribute="bottom" secondItem="v2J-eN-80W" secondAttribute="bottom" constant="5" id="YZd-pR-37L"/>
+                    <constraint firstItem="v2J-eN-80W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="kEB-3z-Pqt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="averageVoteLabel" destination="bNq-jG-1hm" id="rnl-nF-bHi"/>
+                <outlet property="movieImageView" destination="Hay-eZ-8L9" id="ay3-QB-6A8"/>
+                <outlet property="movieNameLabel" destination="C7Q-8x-TbB" id="oaD-Bm-3mJ"/>
+            </connections>
+            <point key="canvasLocation" x="80" y="41.587677725118482"/>
+        </tableViewCell>
+    </objects>
+</document>
