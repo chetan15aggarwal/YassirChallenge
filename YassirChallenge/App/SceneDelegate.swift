@@ -26,5 +26,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 // MARK: - Movie List Controller Setup
 
 private func createMovieListViewController() -> MovieListViewController {
-    return MovieListViewController()
+    return MovieListViewController(with: createMovieListViewModel())
 }
+
+private func createMovieListViewModel() -> MovieListViewModeling {
+    return MovieListViewModel(with: createMovieListLoader())
+    
+    func createHTTPClient() -> HTTPClient {
+        return URLSessionHTTPClient()
+    }
+    
+    func createMovieListLURL() -> URL {
+        return URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=c9856d0cb57c3f14bf75bdc6c063b8f3&language=en-US&sort_by=popularity.desc&include_video=false&page=1")!
+    }
+    
+    func createMovieListLoader() -> MovieListLoader {
+        return RemoteMovieListLoader(url: createMovieListLURL(),
+                                   client: createHTTPClient())
+    }
+}
+
