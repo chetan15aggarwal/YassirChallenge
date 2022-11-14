@@ -19,6 +19,7 @@
 		0EB9631C29215B5C00B494A6 /* MovieListItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB9631B29215B5C00B494A6 /* MovieListItemsMapper.swift */; };
 		0EB9631E29215B7600B494A6 /* MovieListItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB9631D29215B7600B494A6 /* MovieListItemDTO.swift */; };
 		0EC4B88B2922315D009078B9 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC4B88A2922315D009078B9 /* MovieListViewController.swift */; };
+		0EC4B88D2922331A009078B9 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC4B88C29223319009078B9 /* MovieListViewModel.swift */; };
 		0EEF157F2921443F003F125F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF157E2921443F003F125F /* AppDelegate.swift */; };
 		0EEF15812921443F003F125F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF15802921443F003F125F /* SceneDelegate.swift */; };
 		0EEF15832921443F003F125F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF15822921443F003F125F /* ViewController.swift */; };
@@ -58,6 +59,7 @@
 		0EB9631B29215B5C00B494A6 /* MovieListItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItemsMapper.swift; sourceTree = "<group>"; };
 		0EB9631D29215B7600B494A6 /* MovieListItemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItemDTO.swift; sourceTree = "<group>"; };
 		0EC4B88A2922315D009078B9 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
+		0EC4B88C29223319009078B9 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		0EEF157B2921443F003F125F /* YassirChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YassirChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EEF157E2921443F003F125F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EEF15802921443F003F125F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		0EB96308292148B000B494A6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0EC4B88C29223319009078B9 /* MovieListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				0EB9631E29215B7600B494A6 /* MovieListItemDTO.swift in Sources */,
 				0EEF15812921443F003F125F /* SceneDelegate.swift in Sources */,
 				0EB96316292158DB00B494A6 /* URLSessionHTTPClient.swift in Sources */,
+				0EC4B88D2922331A009078B9 /* MovieListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
