@@ -46,3 +46,6 @@ private func createMovieListViewModel() -> MovieListViewModeling {
     }
 }
 
+struct Configurations {
+    static let imageBaseUrl: String = "http://image.tmdb.org/t/p/w92"
+}

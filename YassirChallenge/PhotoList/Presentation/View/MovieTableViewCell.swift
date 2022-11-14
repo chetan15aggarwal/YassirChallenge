@@ -4,7 +4,7 @@
 
 
 import UIKit
-
+import SDWebImage
 class MovieTableViewCell: UITableViewCell {
 
     @IBOutlet weak var movieNameLabel: UILabel!
@@ -18,6 +18,10 @@ class MovieTableViewCell: UITableViewCell {
     func setUp(_ movie: MovieListItem) {
         self.averageVoteLabel.text = "Average Vote: \(movie.voteAverage)"
         self.movieNameLabel.text = movie.title
-        self.movieImageView.image = UIImage(named: "DefaultPoster")
+        
+        if let posterImagePath = movie.posterPath,
+           let url = URL(string: Configurations.imageBaseUrl + posterImagePath) {
+            self.movieImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "moviePosterPlaceholder"), context: nil)
+        }
     }
 }

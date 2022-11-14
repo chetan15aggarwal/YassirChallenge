@@ -4,6 +4,7 @@
 
 
 import XCTest
+import SDWebImage
 @testable import YassirChallenge
 
 final class LoadMovieListFromRemoteUseCaseTests: XCTestCase {
