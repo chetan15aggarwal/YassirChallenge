@@ -51,6 +51,7 @@ class MovieListViewController: UIViewController {
     }
     
     private func setUpUI(){
+        title = "Movie Library"
         setupTableView()
         setTableConstraints()
         setupBindings()
