@@ -6,6 +6,11 @@
 import UIKit
 
 class MovieListViewController: UIViewController {
+
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        return tableView
+    }()
     
     // MARK: - View Model
     var viewModel: MovieListViewModeling!
@@ -29,6 +34,37 @@ class MovieListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
+        setupTableView()
         viewModel.fetchMovieList()
+    }
+    
+    //MARK: - Helpers methods
+    
+    private func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        //setup cell
+        
+        setTableConstraints()
+    }
+    
+    private func setTableConstraints() {
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+    }
+}
+
+extension MovieListViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 }
