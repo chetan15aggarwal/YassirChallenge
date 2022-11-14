@@ -6,7 +6,7 @@
 import Foundation
 @testable import YassirChallenge
 
-class StubGenerator {
+final class StubGenerator {
     func stubAcronyms(_ filename: String) -> [MovieListItemDTO] {
         let path = Bundle.main.path(forResource: filename, ofType: "json")!
         let data = try! Data(contentsOf: URL(fileURLWithPath: path))

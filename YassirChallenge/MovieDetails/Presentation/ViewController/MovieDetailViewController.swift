@@ -5,7 +5,7 @@
 import UIKit
 import SDWebImage
 
-class MovieDetailViewController: UIViewController {
+final class MovieDetailViewController: UIViewController {
     
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!

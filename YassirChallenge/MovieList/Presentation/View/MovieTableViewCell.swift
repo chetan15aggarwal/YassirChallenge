@@ -4,7 +4,7 @@
 
 import UIKit
 import SDWebImage
-class MovieTableViewCell: UITableViewCell {
+final class MovieTableViewCell: UITableViewCell {
 
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var movieImageView: UIImageView!

@@ -60,7 +60,7 @@ final class MovieListViewModelTests: XCTestCase {
 }
 
 
-class MockMovieListLoader: MovieListLoader {
+final class MockMovieListLoader: MovieListLoader {
 
     var isloadCalled = false
     
@@ -71,7 +71,7 @@ class MockMovieListLoader: MovieListLoader {
     }
 }
 
-class MockMovieListErrorLoader: MovieListLoader {
+final class MockMovieListErrorLoader: MovieListLoader {
 
     var isloadCalled = false
 

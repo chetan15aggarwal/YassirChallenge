@@ -4,7 +4,7 @@
 
 import UIKit
 
-class MovieListViewController: UIViewController {
+final class MovieListViewController: UIViewController {
 
     let tableView: UITableView = {
         let tableView = UITableView()
