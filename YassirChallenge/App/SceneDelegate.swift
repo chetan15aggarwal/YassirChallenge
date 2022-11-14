@@ -2,13 +2,11 @@
 // YassirChallenge
 // Created by Chetan Aggarwal.
 
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -50,7 +48,7 @@ struct Configurations {
     static let imageBaseUrl: String = "http://image.tmdb.org/t/p/w92"
 }
 
-//MARK: - Create Detail View Controller
+// MARK: - Create Detail View Controller
 
 func createMovieDetailViewController(with id: UInt) -> MovieDetailViewController {
     

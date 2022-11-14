@@ -2,7 +2,6 @@
 // YassirChallenge
 // Created by Chetan Aggarwal.
 
-
 import UIKit
 
 class MovieListViewController: UIViewController {
@@ -38,8 +37,7 @@ class MovieListViewController: UIViewController {
         viewModel.fetchMovieList()
     }
     
-    //MARK: - Helpers methods
-    
+    // MARK: - Helpers methods
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -50,7 +48,7 @@ class MovieListViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
     }
     
-    private func setUpUI(){
+    private func setUpUI() {
         title = "Movie Library"
         setupTableView()
         setTableConstraints()
@@ -92,7 +90,7 @@ class MovieListViewController: UIViewController {
         }
     }
     
-    private func showErrorMessgae(message : String) {
+    private func showErrorMessgae(message: String) {
         let alertController = UIAlertController.init(title: "Error", message: message, preferredStyle: .alert)
         let cancelAction = UIAlertAction.init(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
@@ -110,12 +108,13 @@ extension MovieListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellData = viewModel.data(for: indexPath)
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as! MovieTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as? MovieTableViewCell else {
+            return UITableViewCell()
+        }
         cell.setUp(cellData)
         return cell
     }
 }
-
 
 extension MovieListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

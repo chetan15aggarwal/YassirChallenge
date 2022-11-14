@@ -2,7 +2,6 @@
 // YassirChallengeUITests
 // Created by Chetan Aggarwal.
 
-
 import XCTest
 
 final class YassirChallengeUITestsLaunchTests: XCTestCase {

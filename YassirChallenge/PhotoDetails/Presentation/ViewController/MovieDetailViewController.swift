@@ -2,7 +2,6 @@
 // YassirChallenge
 // Created by Chetan Aggarwal.
 
-
 import UIKit
 import SDWebImage
 
@@ -26,7 +25,7 @@ class MovieDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - View Life Cycle
+    // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +33,7 @@ class MovieDetailViewController: UIViewController {
         viewModel.fetchMovieDetails()
     }
     
-    //MARK: - Helpers
+    // MARK: - Helpers
     private func setupBindings() {
         bindTableViewReload()
         bindErrorHandling()
@@ -68,11 +67,10 @@ class MovieDetailViewController: UIViewController {
         }
     }
     
-    private func showErrorMessgae(message : String) {
+    private func showErrorMessgae(message: String) {
         let alertController = UIAlertController.init(title: "Error", message: message, preferredStyle: .alert)
         let cancelAction = UIAlertAction.init(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
     }
 }
-

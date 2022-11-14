@@ -400,6 +400,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EEF15A529214444003F125F /* Build configuration list for PBXNativeTarget "YassirChallenge" */;
 			buildPhases = (
+				0E2D327E2922C44A00280C94 /* Run SwiftLint */,
 				0EEF15772921443F003F125F /* Sources */,
 				0EEF15782921443F003F125F /* Frameworks */,
 				0EEF15792921443F003F125F /* Resources */,
@@ -530,6 +531,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E2D327E2922C44A00280C94 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0EEF15772921443F003F125F /* Sources */ = {

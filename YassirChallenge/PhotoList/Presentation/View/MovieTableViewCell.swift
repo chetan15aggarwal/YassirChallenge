@@ -2,7 +2,6 @@
 // YassirChallenge
 // Created by Chetan Aggarwal.
 
-
 import UIKit
 import SDWebImage
 class MovieTableViewCell: UITableViewCell {

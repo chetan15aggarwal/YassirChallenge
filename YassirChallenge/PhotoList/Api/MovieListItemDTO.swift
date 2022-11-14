@@ -2,7 +2,6 @@
 // YassirChallenge
 // Created by Chetan Aggarwal.
 
-
 import Foundation
 
 struct MovieListItemDTO: Decodable {

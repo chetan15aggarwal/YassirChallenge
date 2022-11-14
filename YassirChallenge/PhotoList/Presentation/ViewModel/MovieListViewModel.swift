@@ -2,7 +2,6 @@
 // YassirChallenge
 // Created by Chetan Aggarwal.
 
-
 import Foundation
 
 protocol MovieListViewModeling {
@@ -21,7 +20,7 @@ final class MovieListViewModel: MovieListViewModeling {
     var movieList: [MovieListItem] = []
     
     var errorMessage = Container<String?>(value: nil)
-    var shouldReloadTableView : Container<Bool> = Container.init(value: false)
+    var shouldReloadTableView: Container<Bool> = Container.init(value: false)
     
     init(with _movieListLoader: MovieListLoader) {
         self.movieListLoader = _movieListLoader
