@@ -8,6 +8,7 @@ class MovieListViewController: UIViewController {
 
     let tableView: UITableView = {
         let tableView = UITableView()
+        tableView.backgroundColor = .white
         return tableView
     }()
     
@@ -32,7 +33,7 @@ class MovieListViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        view.backgroundColor = .white
         setUpUI()
         viewModel.fetchMovieList()
     }

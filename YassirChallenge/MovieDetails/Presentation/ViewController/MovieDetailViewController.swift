@@ -45,8 +45,10 @@ class MovieDetailViewController: UIViewController {
             guard let details = movieDetails else { return }
             DispatchQueue.main.async {
                 self.titleLabel.text = details?.title
-                self.averageVoteLabel.text = "\(String(describing: details?.averageVote))"
                 self.overviewLabel.text = details?.overview
+                if let averageVoteValue = details?.averageVote {
+                    self.averageVoteLabel.text = "\(averageVoteValue)"
+                }
                 
                 if let posterImagePath = details?.posterPath {
                     let url = MovieUrl.imageBaseUrl(posterImagePath).url()
