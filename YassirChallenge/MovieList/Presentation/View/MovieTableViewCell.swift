@@ -18,8 +18,8 @@ class MovieTableViewCell: UITableViewCell {
         self.averageVoteLabel.text = "Average Vote: \(movie.voteAverage)"
         self.movieNameLabel.text = movie.title
         
-        if let posterImagePath = movie.posterPath,
-           let url = URL(string: Configurations.imageBaseUrl + posterImagePath) {
+        if let posterImagePath = movie.posterPath {
+            let url = MovieUrl.imageBaseUrl(posterImagePath).url()
             self.movieImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "moviePosterPlaceholder"), context: nil)
         }
     }

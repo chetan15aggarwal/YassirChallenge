@@ -20,15 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 }
 
-// MARK: - Configurations
-struct Configurations {
-    static let imageBaseUrl: String = "http://image.tmdb.org/t/p/w92"
-}
-
 // MARK: - Movie List Controller Setup
 
 private func createMovieListViewController() -> MovieListViewController {
-    let url = URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=c9856d0cb57c3f14bf75bdc6c063b8f3&language=en-US&sort_by=popularity.desc&include_video=false&page=1")!
+    let url = MovieUrl.movieList.url()
     let client = URLSessionHTTPClient()
     let loader = RemoteMovieListLoader(url: url, client: client)
     let viewModel = MovieListViewModel(with: loader)
@@ -38,10 +33,33 @@ private func createMovieListViewController() -> MovieListViewController {
 // MARK: - Create Detail View Controller
 
 func createMovieDetailViewController(with id: UInt) -> MovieDetailViewController {
-    let url = URL(string: "https://api.themoviedb.org/3/movie/\(id)?api_key=c9856d0cb57c3f14bf75bdc6c063b8f3&language=en-US")!
+    let url = MovieUrl.movieDetail(id).url()
     let client = URLSessionHTTPClient()
     let loader = RemoteMovieDetailLoader(url: url,
                                          client: client)
     let viewModel = MovieDetailViewModel(with: loader)
     return MovieDetailViewController(with: viewModel)
+}
+
+enum MovieUrl {
+    
+    static let apiKey: String =  "c9856d0cb57c3f14bf75bdc6c063b8f3"
+    static let defaultLanguage: String = "&language=en-US&"
+    
+    case movieList
+    case movieDetail(UInt)
+    case imageBaseUrl(String)
+    
+    func url() -> URL {
+        switch self {
+        case .movieList:
+            return URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=\(MovieUrl.apiKey)\(MovieUrl.defaultLanguage)&sort_by=popularity.desc&include_video=false&page=1")!
+            
+        case let .movieDetail(id):
+            return URL(string: "https://api.themoviedb.org/3/movie/\(id)?api_key=\(MovieUrl.apiKey)\(MovieUrl.defaultLanguage)")!
+            
+        case let .imageBaseUrl(imagePath):
+            return URL(string: "http://image.tmdb.org/t/p/w92\(imagePath)")!
+        }
+    }
 }

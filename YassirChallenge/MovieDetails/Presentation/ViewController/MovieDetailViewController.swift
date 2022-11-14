@@ -48,8 +48,8 @@ class MovieDetailViewController: UIViewController {
                 self.averageVoteLabel.text = "\(String(describing: details?.averageVote))"
                 self.overviewLabel.text = details?.overview
                 
-                if let posterImagePath = details?.posterPath,
-                   let url = URL(string: Configurations.imageBaseUrl + posterImagePath) {
+                if let posterImagePath = details?.posterPath {
+                    let url = MovieUrl.imageBaseUrl(posterImagePath).url()
                     self.movieImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "moviePosterPlaceholder"), context: nil)
                 }
             }
