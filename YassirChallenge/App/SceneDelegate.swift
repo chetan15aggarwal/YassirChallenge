@@ -18,40 +18,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
+}
 
+// MARK: - Configurations
+struct Configurations {
+    static let imageBaseUrl: String = "http://image.tmdb.org/t/p/w92"
 }
 
 // MARK: - Movie List Controller Setup
 
 private func createMovieListViewController() -> MovieListViewController {
-    return MovieListViewController(with: createMovieListViewModel())
-}
-
-private func createMovieListViewModel() -> MovieListViewModeling {
-    return MovieListViewModel(with: createMovieListLoader())
-    
-    func createHTTPClient() -> HTTPClient {
-        return URLSessionHTTPClient()
-    }
-    
-    func createMovieListLURL() -> URL {
-        return URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=c9856d0cb57c3f14bf75bdc6c063b8f3&language=en-US&sort_by=popularity.desc&include_video=false&page=1")!
-    }
-    
-    func createMovieListLoader() -> MovieListLoader {
-        return RemoteMovieListLoader(url: createMovieListLURL(),
-                                   client: createHTTPClient())
-    }
-}
-
-struct Configurations {
-    static let imageBaseUrl: String = "http://image.tmdb.org/t/p/w92"
+    let url = URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=c9856d0cb57c3f14bf75bdc6c063b8f3&language=en-US&sort_by=popularity.desc&include_video=false&page=1")!
+    let client = URLSessionHTTPClient()
+    let loader = RemoteMovieListLoader(url: url, client: client)
+    let viewModel = MovieListViewModel(with: loader)
+    return MovieListViewController(with: viewModel)
 }
 
 // MARK: - Create Detail View Controller
 
 func createMovieDetailViewController(with id: UInt) -> MovieDetailViewController {
-    
     let url = URL(string: "https://api.themoviedb.org/3/movie/\(id)?api_key=c9856d0cb57c3f14bf75bdc6c063b8f3&language=en-US")!
     let client = URLSessionHTTPClient()
     let loader = RemoteMovieDetailLoader(url: url,
