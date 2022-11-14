@@ -11,6 +11,7 @@
 		0E280A342921B65800DC3668 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E280A332921B65800DC3668 /* URLSessionHTTPClientTests.swift */; };
 		0E280A392921B6FE00DC3668 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E280A382921B6FE00DC3668 /* XCTestCase+MemoryLeakTracking.swift */; };
 		0E280A3C2921B91D00DC3668 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E280A3B2921B91D00DC3668 /* URLProtocolStub.swift */; };
+		0E2D32722922AFF400280C94 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0E2D32712922AFF400280C94 /* SDWebImage */; };
 		0E4C0898292285530099FE0C /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4C0896292285530099FE0C /* MovieDetailViewController.swift */; };
 		0E4C0899292285530099FE0C /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E4C0897292285530099FE0C /* MovieDetailViewController.xib */; };
 		0E4C089D29228C0F0099FE0C /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4C089C29228C0F0099FE0C /* MovieDetailViewModel.swift */; };
@@ -110,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E2D32722922AFF400280C94 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +140,28 @@
 				0E280A3B2921B91D00DC3668 /* URLProtocolStub.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		0E2D326E2922AF4E00280C94 /* MovieList */ = {
+			isa = PBXGroup;
+			children = (
+				0E280A3129219F9B00DC3668 /* LoadMovieListFromRemoteUseCaseTests.swift */,
+			);
+			path = MovieList;
+			sourceTree = "<group>";
+		};
+		0E2D326F2922AF5600280C94 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		0E2D32702922AFF400280C94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		0E6AA2D4292252DF00FDC6CB /* View */ = {
@@ -309,6 +333,7 @@
 				0EEF159429214443003F125F /* YassirChallengeTests */,
 				0EEF159E29214444003F125F /* YassirChallengeUITests */,
 				0EEF157C2921443F003F125F /* Products */,
+				0E2D32702922AFF400280C94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -343,7 +368,8 @@
 				0E6AA2DE29226B3400FDC6CB /* Info.plist */,
 				0E280A3A2921B8FB00DC3668 /* API */,
 				0E280A352921B6C800DC3668 /* Helpers */,
-				0E280A3129219F9B00DC3668 /* LoadMovieListFromRemoteUseCaseTests.swift */,
+				0E2D326E2922AF4E00280C94 /* MovieList */,
+				0E2D326F2922AF5600280C94 /* MovieDetail */,
 			);
 			path = YassirChallengeTests;
 			sourceTree = "<group>";
@@ -394,6 +420,9 @@
 				0EEF159329214443003F125F /* PBXTargetDependency */,
 			);
 			name = YassirChallengeTests;
+			packageProductDependencies = (
+				0E2D32712922AFF400280C94 /* SDWebImage */,
+			);
 			productName = YassirChallengeTests;
 			productReference = 0EEF159129214443003F125F /* YassirChallengeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -861,6 +890,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0E2D32712922AFF400280C94 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E6AA2DB292266D100FDC6CB /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		0E6AA2DC292266D100FDC6CB /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0E6AA2DB292266D100FDC6CB /* XCRemoteSwiftPackageReference "SDWebImage" */;
