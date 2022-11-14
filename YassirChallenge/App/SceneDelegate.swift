@@ -49,3 +49,15 @@ private func createMovieListViewModel() -> MovieListViewModeling {
 struct Configurations {
     static let imageBaseUrl: String = "http://image.tmdb.org/t/p/w92"
 }
+
+//MARK: - Create Detail View Controller
+
+func createMovieDetailViewController(with id: UInt) -> MovieDetailViewController {
+    
+    let url = URL(string: "https://api.themoviedb.org/3/movie/\(id)?api_key=c9856d0cb57c3f14bf75bdc6c063b8f3&language=en-US")!
+    let client = URLSessionHTTPClient()
+    let loader = RemoteMovieDetailLoader(url: url,
+                                         client: client)
+    let viewModel = MovieDetailViewModel(with: loader)
+    return MovieDetailViewController(with: viewModel)
+}

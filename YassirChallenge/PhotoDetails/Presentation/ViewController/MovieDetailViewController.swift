@@ -4,6 +4,7 @@
 
 
 import UIKit
+import SDWebImage
 
 class MovieDetailViewController: UIViewController {
     
@@ -29,6 +30,49 @@ class MovieDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBindings()
+        viewModel.fetchMovieDetails()
+    }
+    
+    //MARK: - Helpers
+    private func setupBindings() {
+        bindTableViewReload()
+        bindErrorHandling()
+    }
+    
+    private func bindTableViewReload() {
+        viewModel.shouldRefreshView.bind {[weak self] (movieDetails) in
+            guard let self = self else { return }
+            guard let details = movieDetails else { return }
+            DispatchQueue.main.async {
+                self.titleLabel.text = details?.title
+                self.averageVoteLabel.text = "\(String(describing: details?.averageVote))"
+                self.overviewLabel.text = details?.overview
+                
+                if let posterImagePath = details?.posterPath,
+                   let url = URL(string: Configurations.imageBaseUrl + posterImagePath) {
+                    self.movieImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "moviePosterPlaceholder"), context: nil)
+                }
+            }
+        }
+    }
+    
+    private func bindErrorHandling() {
+        viewModel.errorMessage.bind {[weak self] (errorMessage) in
+            guard let msg = errorMessage else {
+                return
+            }
+            DispatchQueue.main.async {
+                self?.showErrorMessgae(message: msg ?? "")
+            }
+        }
+    }
+    
+    private func showErrorMessgae(message : String) {
+        let alertController = UIAlertController.init(title: "Error", message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction.init(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
