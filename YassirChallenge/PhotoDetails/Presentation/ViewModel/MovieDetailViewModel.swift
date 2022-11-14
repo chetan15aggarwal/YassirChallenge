@@ -12,11 +12,12 @@ protocol MovieDetailViewModeling {
     func fetchMovieDetails()
 }
 
-final class MovieDetailViewModel {
+final class MovieDetailViewModel: MovieDetailViewModeling {
+    
     let movieDetailLoader: MovieDetailLoader
     
     var errorMessage = Container<String?>(value: nil)
-    var shouldReloadTableView : Container<MovieDetail?> = Container.init(value: nil)
+    var shouldRefreshView : Container<MovieDetail?> = Container.init(value: nil)
     
     init(with _movieDetailLoader: MovieDetailLoader) {
         self.movieDetailLoader = _movieDetailLoader
@@ -26,7 +27,7 @@ final class MovieDetailViewModel {
         movieDetailLoader.load { result in
             switch result {
             case let .success(movieDetail):
-                self.shouldReloadTableView.value = movieDetail
+                self.shouldRefreshView.value = movieDetail
             case let .failure(error):
                 self.errorMessage.value = error.localizedDescription
             }

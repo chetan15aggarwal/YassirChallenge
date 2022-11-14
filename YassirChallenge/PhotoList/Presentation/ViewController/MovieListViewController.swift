@@ -120,10 +120,16 @@ extension MovieListViewController: UITableViewDataSource {
 extension MovieListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = viewModel.didSelect(indexPath: indexPath)
+//        let detailViewController = MovieDetailViewController(nibName: "MovieDetailViewController", bundle: nil)
         
-        debugPrint("Movie selected \(data.title)")
+        let urlString = "https://api.themoviedb.org/3/movie/\(data.id)?api_key=c9856d0cb57c3f14bf75bdc6c063b8f3&language=en-US"
+        guard let url = URL(string: urlString) else { return }
+        let client = URLSessionHTTPClient()
         
-        let detailViewController = MovieDetailViewController(nibName: "MovieDetailViewController", bundle: nil)
+        let remoteLoader = RemoteMovieDetailLoader(url: url, client: client)
+        let viewmodel = MovieDetailViewModel(with: remoteLoader)
+        
+        let detailViewController = MovieDetailViewController(with: viewmodel)
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 
