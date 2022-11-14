@@ -121,7 +121,9 @@ extension MovieListViewController: UITableViewDelegate {
         let data = viewModel.didSelect(indexPath: indexPath)
         
         debugPrint("Movie selected \(data.title)")
-        //open detail view controller
+        
+        let detailViewController = MovieDetailViewController(nibName: "MovieDetailViewController", bundle: nil)
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 
 }
