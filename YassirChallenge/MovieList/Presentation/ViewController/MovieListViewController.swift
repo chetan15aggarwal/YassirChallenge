@@ -51,6 +51,7 @@ final class MovieListViewController: UIViewController {
     
     private func setUpUI() {
         navigationItem.title = "Movie Library"
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
 
